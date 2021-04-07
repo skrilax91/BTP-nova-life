@@ -19,6 +19,7 @@ public class WireTask : MonoBehaviour
         _availableColors = new List<Color>(_wireColors);
         _availableLeftWireIndex = new List<int>();
         _availableRightWireIndex = new List<int>();
+        isSuccess = false;
 
         for (int i = 0; i < _leftWires.Count; i++) { 
             _availableLeftWireIndex.Add(i);

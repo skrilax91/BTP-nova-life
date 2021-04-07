@@ -68,7 +68,6 @@ public class Controller : NetworkBehaviour
     {
         while (task.activeInHierarchy) {
             yield return new WaitForSeconds(0.5f);
-        
         }
         ChangeLightMode(lamp.GetComponent<LightController>(), true);
         freeze = false;
