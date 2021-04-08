@@ -78,17 +78,13 @@ public class Controller : NetworkBehaviour
 
     private IEnumerator WaitComplete(LightController lamp, GameObject task)
     {
-        while (task.activeInHierarchy) {
+        while (task.activeInHierarchy && !lamp.IsActive())
             yield return new WaitForSeconds(0.5f);
-        }
-        ChangeLightMode(lamp, true);
+        if (lamp.IsActive())
+            task.SetActive(false);
+        else
+            lamp.ChangeLightMode(true);
         freeze = false;
         Cursor.visible = false;
-    }
-
-    [Command]
-    private void ChangeLightMode(LightController light, bool mode)
-    {
-        light.ChangeLightMode(mode);
     }
 }
