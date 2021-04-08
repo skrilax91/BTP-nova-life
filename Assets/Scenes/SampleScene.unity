@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857201351118330185, guid: d41e3cd5c7d79a844abc7ef4a08de0b3, type: 3}
       propertyPath: timer
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7936799408530293068, guid: d41e3cd5c7d79a844abc7ef4a08de0b3, type: 3}
       propertyPath: m_RootOrder
@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857201351118330185, guid: d41e3cd5c7d79a844abc7ef4a08de0b3, type: 3}
       propertyPath: timer
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7936799408530293068, guid: d41e3cd5c7d79a844abc7ef4a08de0b3, type: 3}
       propertyPath: m_RootOrder

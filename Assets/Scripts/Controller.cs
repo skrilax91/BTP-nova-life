@@ -1,6 +1,7 @@
 using UnityEngine;
 using Mirror;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(PlayerEngine))]
 public class Controller : NetworkBehaviour
@@ -17,6 +18,8 @@ public class Controller : NetworkBehaviour
     [SerializeField]
     private float mouseYSensitivity = 3f;
 
+    [SerializeField]
+    private List<GameObject> _availableTasks;
     private PlayerEngine pEngine;
 
     private void Start()
@@ -46,30 +49,39 @@ public class Controller : NetworkBehaviour
             pEngine.SetRotation(Vector3.zero, 0);
         }
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 5, mask) && Input.GetKeyDown(KeyCode.E)) {
-            GameObject lamp = hit.collider.gameObject;
-            Light light = lamp.transform.Find("Area Light").GetComponent<Light>();
-            GameObject task = gameObject.transform.Find("Canvas/" + lamp.gameObject.GetComponent<LightController>()._task).gameObject;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 3, mask) && Input.GetKeyDown(KeyCode.E)) {
+            LightController lamp = hit.collider.gameObject.GetComponent<LightController>();
+            GameObject task = GetTaskByName(lamp._task);
             
-            if (!task || light.enabled || task.activeInHierarchy)
+            if (task == null || lamp.IsActive() || task.activeInHierarchy)
                 return;
 
             //Prepare user for interface
             freeze = true;
             Cursor.visible = true;
+            Debug.Log("Activate task: " + task.name);
             task.SetActive(true);
 
             // Wait for finish
-            StartCoroutine(waitComplete(lamp, task));
+            StartCoroutine(WaitComplete(lamp, task));
         }
 
     }
-    private IEnumerator waitComplete(GameObject lamp, GameObject task)
+
+    private GameObject GetTaskByName(string name)
+    {
+        for (int i = 0; i < _availableTasks.Count; i++)
+            if (_availableTasks[i].name == name)
+                return _availableTasks[i];
+        return null;
+    }
+
+    private IEnumerator WaitComplete(LightController lamp, GameObject task)
     {
         while (task.activeInHierarchy) {
             yield return new WaitForSeconds(0.5f);
         }
-        ChangeLightMode(lamp.GetComponent<LightController>(), true);
+        ChangeLightMode(lamp, true);
         freeze = false;
         Cursor.visible = false;
     }

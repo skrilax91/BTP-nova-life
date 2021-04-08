@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385993629475834
 LineRenderer:
@@ -360,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385993646439795
 LineRenderer:
@@ -552,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385993661887604
 LineRenderer:
@@ -744,6 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385993758276023
 LineRenderer:
@@ -1011,6 +1015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385993835212345
 LineRenderer:
@@ -1419,6 +1424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385994093489902
 LineRenderer:
@@ -2121,6 +2127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385994589603620
 LineRenderer:
@@ -2313,6 +2320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
+  _isDrag: 0
   IsSuccess: 0
 --- !u!120 &671385994722707544
 LineRenderer:

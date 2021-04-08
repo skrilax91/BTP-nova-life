@@ -32,23 +32,28 @@ public class LightController : NetworkBehaviour
         }
     }
 
+    public bool IsActive()
+    {
+        return systemLight.enabled;
+    }
+
     public void ChangeLightMode(bool mode)
     {
         if (isServer)
-            ChangeServerLightMode(mode);
+            RpcChangeLightMode(mode);
         else
-            ChangeClientLightMode(mode);
+            CmdChangeLightMode(mode);
     }
 
     [Command]
-    private void ChangeClientLightMode(bool mode)
+    private void CmdChangeLightMode(bool mode)
     {
         systemLight.enabled = mode;
-        ChangeServerLightMode(mode);
+        RpcChangeLightMode(mode);
     }
 
     [ClientRpc]
-    private void ChangeServerLightMode(bool mode)
+    private void RpcChangeLightMode(bool mode)
     {
         if (isLocalPlayer)
             return;

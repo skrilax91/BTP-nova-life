@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 2019705276948576744}
   - component: {fileID: 2767283399826047086}
   - component: {fileID: 1749670953229213136}
+  - component: {fileID: 221872495473657267}
   - component: {fileID: 3730917788784607307}
   - component: {fileID: 6450038018826843023}
-  - component: {fileID: 221872495473657267}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -136,6 +136,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2019705277927119541}
+--- !u!114 &221872495473657267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019705276948576755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d235d94fb3b2cc43b9d8dab86099fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  speed: 3
+  cam: {fileID: 2019705277927119541}
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+  mouseXSensitivity: 7
+  mouseYSensitivity: 10
+  _availableTasks:
+  - {fileID: 4523400436877055625}
 --- !u!114 &3730917788784607307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,27 +197,6 @@ MonoBehaviour:
   compressRotation: 0
   interpolateScale: 1
   syncScale: 1
---- !u!114 &221872495473657267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019705276948576755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d235d94fb3b2cc43b9d8dab86099fae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  speed: 3
-  cam: {fileID: 2019705277927119541}
-  mask:
-    serializedVersion: 2
-    m_Bits: 64
-  mouseXSensitivity: 7
-  mouseYSensitivity: 10
 --- !u!1 &2019705277927119538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1103,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91cc9e60be8c7a2409626034711ca41b, type: 3}
+--- !u!1 &4523400436877055625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 671385994397883472, guid: 91cc9e60be8c7a2409626034711ca41b, type: 3}
+  m_PrefabInstance: {fileID: 4005783342881786585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4523400436877055634 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 671385994397883467, guid: 91cc9e60be8c7a2409626034711ca41b, type: 3}
